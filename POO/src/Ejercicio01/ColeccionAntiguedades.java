@@ -1,6 +1,6 @@
 package Ejercicio01;
 
-public class main {
+public class ColeccionAntiguedades {
 
 	public static void main(String[] args) {
 		/*
@@ -16,6 +16,8 @@ public class main {
 		 *  antigüedad (el tipo, datos comunes, datos específicos), cree el objeto de la 
 		 *  clase correspondiente, y posteriormente lo imprima en pantalla.  
 		 */
+
+		
 	}
 
 }

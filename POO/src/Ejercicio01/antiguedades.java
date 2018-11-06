@@ -1,6 +1,6 @@
 package Ejercicio01;
 
-public class antiguedades {
+public class antiguedades extends ColeccionAntiguedades {
 	
 	private String añoFabricacion;
 	private String origen;
