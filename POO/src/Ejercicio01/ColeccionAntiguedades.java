@@ -1,23 +1,43 @@
 package Ejercicio01;
 
+import javax.swing.JOptionPane;
+
 public class ColeccionAntiguedades {
 
 	public static void main(String[] args) {
 		/*
-		 *2º. Crear un programa que use la herencia para gestionar una colección de antigüedades. 
-		 *Todas las antigüedades tienen datos en común, como año de fabricación, el origen y el 
-		 *precio de venta, pero cada tipo particular de antigüedad tiene datos específicos. 
-		 *Por ejemplo, las joyas tienen un material de fabricación. Los libros tienen 
-		 *un autor y título, etc... El programa podrá crear y gestionar antigüedades  de 
-		 *4 tipos diferentes. Deberás crear las clases necesarias, con sus variables de 
-		 *instancia, métodos para actualizar y consultar las variables, constructores, y
-		 * métodos para imprimir en pantalla el objeto. Para probar las clases, deberás 
+		 *2ï¿½. Crear un programa que use la herencia para gestionar una colecciï¿½n de antigï¿½edades. 
+		 *Todas las antigï¿½edades tienen datos en comï¿½n, como aï¿½o de fabricaciï¿½n, el origen y el 
+		 *precio de venta, pero cada tipo particular de antigï¿½edad tiene datos especï¿½ficos. 
+		 *Por ejemplo, las joyas tienen un material de fabricaciï¿½n. Los libros tienen 
+		 *un autor y tï¿½tulo, etc... El programa podrï¿½ crear y gestionar antigï¿½edades  de 
+		 *4 tipos diferentes. Deberï¿½s crear las clases necesarias, con sus variables de 
+		 *instancia, mï¿½todos para actualizar y consultar las variables, constructores, y
+		 * mï¿½todos para imprimir en pantalla el objeto. Para probar las clases, deberï¿½s 
 		 * crear una clase llamada "ColeccionAntiguedades", que pida los datos sobre una
-		 *  antigüedad (el tipo, datos comunes, datos específicos), cree el objeto de la 
+		 *  antigï¿½edad (el tipo, datos comunes, datos especï¿½ficos), cree el objeto de la 
 		 *  clase correspondiente, y posteriormente lo imprima en pantalla.  
 		 */
 
+		String menu = "Creacion de datos de antiguedades: "
+				+ "\n\n 1.-Joya"
+				+ "\n 2.-Mueble";
 		
+		
+		int opcion = Integer.parseInt(JOptionPane.showInputDialog(menu));
+		
+		switch (opcion) {
+		case 1:
+			
+			break;
+			
+		case 2:
+			
+			break;
+
+		default:
+			break;
+		}
 	}
 
 }

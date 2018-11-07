@@ -2,17 +2,33 @@ package Ejercicio01;
 
 public class antiguedades extends ColeccionAntiguedades {
 	
-	private String añoFabricacion;
+	private int annoFabricacion;
 	private String origen;
-	private int precio;
+	private float precio;
 	
 	
 	
-	public String getAñoFabricacion() {
-		return añoFabricacion;
+
+	public antiguedades() {
+		super();
 	}
-	public void setAñoFabricacion(String añoFabricacion) {
-		this.añoFabricacion = añoFabricacion;
+	
+	
+	public antiguedades(int annoFabricacion, String origen, float precio) {
+		super();
+		this.annoFabricacion = annoFabricacion;
+		this.origen = origen;
+		this.precio = precio;
+	}
+
+
+
+
+	public int getAnoFabricacion() {
+		return annoFabricacion;
+	}
+	public void setAnnoFabricacion(int annoFabricacion) {
+		this.annoFabricacion = annoFabricacion;
 	}
 	public String getOrigen() {
 		return origen;
@@ -20,10 +36,10 @@ public class antiguedades extends ColeccionAntiguedades {
 	public void setOrigen(String origen) {
 		this.origen = origen;
 	}
-	public int getPrecio() {
+	public float getPrecio() {
 		return precio;
 	}
-	public void setPrecio(int precio) {
+	public void setPrecio(float precio) {
 		this.precio = precio;
 	}
 
