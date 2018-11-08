@@ -21,14 +21,21 @@ public class ColeccionAntiguedades {
 
 		String menu = "Creacion de datos de antiguedades: "
 				+ "\n\n 1.-Joya"
-				+ "\n 2.-Mueble";
+				+ "\n 2.-Mueble"
+				+ "\n 3.-Libro"
+				+ "\n 4.-Cuadro";
+		
+		
 		
 		
 		int opcion = Integer.parseInt(JOptionPane.showInputDialog(menu));
 		
+		if (opcion > 0 && opcion <=4) {
+			
+			antiguedades antiguedad = null;
 		switch (opcion) {
 		case 1:
-			
+			antiguedades antiguedad = 
 			break;
 			
 		case 2:
@@ -37,6 +44,7 @@ public class ColeccionAntiguedades {
 
 		default:
 			break;
+		}
 		}
 	}
 
