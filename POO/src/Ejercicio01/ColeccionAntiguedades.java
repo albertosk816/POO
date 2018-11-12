@@ -35,7 +35,7 @@ public class ColeccionAntiguedades {
 			antiguedades antiguedad = null;
 		switch (opcion) {
 		case 1:
-			antiguedades antiguedad = 
+			antiguedades antiguedad = new antiguedad;
 			break;
 			
 		case 2:

@@ -42,7 +42,7 @@ public class main {
 			switch (num1) {
 			case 1:
 				
-				Matricula 
+			Matricula eso = new eso();
 				
 				break;
 
