@@ -1,9 +1,6 @@
 package Oca;
 
-
-
-public class Casilla {
-
+public class Casilla {  
 	private int orden;
 	private String nombre;
 	private Casilla destino;
