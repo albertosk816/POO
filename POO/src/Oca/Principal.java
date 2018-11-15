@@ -72,8 +72,6 @@ public class Principal {
 		tablero[61] = new Casilla(62, "Regadera");
 		tablero[62] = new Casilla(63, "Meta");
 		
-		
-		
 
 		// Destinos de las casillas especiales
 		tablero[4].setDestino(tablero[8]);//Oca
@@ -94,9 +92,7 @@ public class Principal {
 		tablero[58].setDestino(tablero[62]);//Oca
 		tablero[57].setDestino(tablero[0]);//Muerte
 
-		
-
-
+	
 	}
 
 }
