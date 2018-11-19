@@ -1,6 +1,8 @@
 package Oca;
 
-public class Casilla {  
+
+
+public class Casilla {   
 	private int orden;
 	private String nombre;
 	private Casilla destino;
@@ -68,6 +70,13 @@ public class Casilla {
 	}
 	public void setMensajeEspecial(String mensajeEspecial) {
 		this.mensajeEspecial = mensajeEspecial;
+	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Casilla [" + orden + " - " + nombre + "]";
 	}
 	
 	

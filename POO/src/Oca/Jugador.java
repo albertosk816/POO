@@ -1,8 +1,19 @@
 package Oca;
 
-public class Jugador {  
+
+public class Jugador {   
 	private String nombre;
-	private int posicion = 0;
+	private Casilla casilla;
+	private int podium = 0;
+	
+
+	public int getPodium() {
+		return podium;
+	}
+
+	public void setPodium(int podium) {
+		this.podium = podium;
+	}
 
 	/**
 	 * 
@@ -18,6 +29,7 @@ public class Jugador {
 	public Jugador(String nombre) {
 		super();
 		this.nombre = nombre;
+		this.casilla = Tablero.getPrimeraCasillaEnTablero();
 	}
 	
 	
@@ -25,23 +37,30 @@ public class Jugador {
 	 * 
 	 */
 	public void tirarDado () {
+		// Imprimo en la consola la casilla, antes del movimiento		
+		System.out.println(this.casilla);
+
+		// Utilizamos el azar para conseguir un dado virtual
 		int dado = (int) Math.round(Math.random()*(6-1)+1);
-		this.posicion += dado;
-		if(Tablero.getTablero().getCasillas()[this.posicion].getDestino() != null){
-		     this.posicion = Tablero.getMsjOca();
-		}
-		if (this.posicion > Tablero.getTablero().getCasillas().length) {
-			this.posicion = Tablero.getTablero().getCasillas().length - 
-					(this.posicion - Tablero.getTablero().getCasillas().length);
-			
-		}
+		System.out.println("\tDado: " + dado); 
+
+		this.casilla = Tablero.getCasillaDestino(this.casilla, dado);
+		//		JOptionPane.showMessageDialog(null, "alto");
 		
 	}
 	
-	
-	public void imprimir() {
-		System.out.println(this.nombre + " - pos: " + this.posicion);
+
+	/**
+	 * 
+	 * @return
+	 */
+	public boolean isTerminado () {
+		if (this.casilla.equals(Tablero.getUltimaCasillaEnTablero())) {
+			return true;
+		}
+		return false;
 	}
+	
 	
 	/**
 	 * @return the nombre
@@ -55,18 +74,20 @@ public class Jugador {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 	/**
-	 * @return the posicion
+	 * @return the casilla
 	 */
-	public int getPosicion() {
-		return posicion;
+	public Casilla getCasilla() {
+		return casilla;
 	}
+
 	/**
-	 * @param posicion the posicion to set
+	 * @param casilla the casilla to set
 	 */
-	public void setPosicion(int posicion) {
-		this.posicion = posicion;
+	public void setCasilla(Casilla casilla) {
+		this.casilla = casilla;
 	}
-	
+
 	
 }
