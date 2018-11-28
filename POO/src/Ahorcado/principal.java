@@ -9,7 +9,9 @@ public class principal {
 		
         String miPalabra = null;
         
-        int buscar;
+        String comprobarLetraPalabra = null;
+        
+        int intentos;
 		
 		int palabraAleatoria = (int) Math.round(Math.random()*palabras.length);
 			System.out.println(palabras[palabraAleatoria]);
@@ -20,22 +22,29 @@ public class principal {
 
 				System.out.print(" _ ");
 				
+				
 		}
-			miPalabra = palabras[palabraAleatoria];
-			miPalabra = (String)JOptionPane.showInputDialog("Introduzca una letra o palabra: ");
+			do {
 			
+			comprobarLetraPalabra = JOptionPane.showInputDialog("Introduzca una letra/palabra: ");
 			
-			 for (buscar = 0; buscar < 1000; buscar++) {
-			
-			if(miPalabra.equals(palabras[palabraAleatoria])) {
+			//Así igualamos nuestra palabra con la introducida por el usuario
+				if(comprobarLetraPalabra.equals(palabras[palabraAleatoria])) {
+					JOptionPane.showMessageDialog(null, "***Enhorabuena la palabra ha sido acertada***");
+			    
+			 } 
+			    	else {
+			    		
+			    	       comprobarLetraPalabra = JOptionPane.showInputDialog("Introduzca una letra/palabra: ");
+			    	       
+			    	       if(comprobarLetraPalabra.contains(palabras[palabraAleatoria])) {
+			    	    	  // comprobarLetraPalabra.replace(_, comprobarLetraAleatoria);
+			    	       }
+			             
+			 }   	
 				
-			}else
-			  
-				miPalabra = (String)JOptionPane.showInputDialog("Introduzca una letra o palabra: ");
-			}
-				System.out.println("\n La palabra es correcta");
-				
-			
+			} while (!comprobarLetraPalabra.equals(palabras[palabraAleatoria]));
+			  JOptionPane.showMessageDialog(null, "***Enhorabuena la palabra ha sido acertada***");
 			
 			}
 	
