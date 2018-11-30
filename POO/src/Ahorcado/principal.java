@@ -7,7 +7,6 @@ public class principal {
 	public static void main(String[] args) {
 		String palabras[] = new String []{"pantalon", "camiseta", "gorra"};
 		
-        String miPalabra = null;
         
         String comprobarLetraPalabra = null;
         
@@ -41,16 +40,16 @@ public class principal {
 					           
 			    			   charUsu = comprobarLetraPalabra.charAt(0);
 			    		      if (charUsu == coincidencias[i]) {
-			    		    	  coincidencias[i] = charUsu;
 			    		    	  
+			    		    	  coincidencias[i] = charUsu;
 			    		    		  
 			    		    		  
 			    		    		//palabras[palabraAleatoria] = comprobarLetraPalabra;
 			    		    		 // coincidencias[i] = comprobarLetraPalabra.charAt(0);
 									//comprobarLetraPalabra.replace(coincidencias[j], charUsu);
 								
-							     System.out.print(coincidencias[i]);
-						      }
+							     
+						      }System.out.print(coincidencias[i]);
 			    		}  
 			    		   
 			    	   }
