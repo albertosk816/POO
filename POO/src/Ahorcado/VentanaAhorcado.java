@@ -80,7 +80,7 @@ public class VentanaAhorcado extends Canvas {
 		g.fillRect(300, 390, 20, 80);
 		g.fillRect(340, 390, 20, 80);
 		
-		if (get >0) {
+		if ( >0) {
 			g.setColor(Color.red);
 			g.fillRect(300, 300, 60, 90);
 		}

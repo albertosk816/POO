@@ -69,43 +69,6 @@ public class juego {
 		}
 }
 
-	@Override
-	public String toString() {
-		return "juego [palabras=" + Arrays.toString(palabras) + ", comprobarLetraPalabra=" + comprobarLetraPalabra
-				+ ", fallos=" + fallos + ", control=" + control + ", charUsu=" + charUsu + ", palabraAleatoria="
-				+ palabraAleatoria + ", palabraEle=" + palabraEle + ", tope=" + tope + ", contador=" + contador + "]";
-	}
-
-	public juego(String[] palabras, String comprobarLetraPalabra, int fallos, int control, char charUsu,
-			int palabraAleatoria, String palabraEle, int tope, int contador) {
-		super();
-		this.palabras = palabras;
-		this.comprobarLetraPalabra = comprobarLetraPalabra;
-		this.fallos = fallos;
-		this.control = control;
-		this.charUsu = charUsu;
-		this.palabraAleatoria = palabraAleatoria;
-		this.palabraEle = palabraEle;
-		this.tope = tope;
-		this.contador = contador;
-	}
-
-	public String[] getPalabras() {
-		return palabras;
-	}
-
-	public void setPalabras(String[] palabras) {
-		this.palabras = palabras;
-	}
-
-	public String getComprobarLetraPalabra() {
-		return comprobarLetraPalabra;
-	}
-
-	public void setComprobarLetraPalabra(String comprobarLetraPalabra) {
-		this.comprobarLetraPalabra = comprobarLetraPalabra;
-	}
-
 	public int getFallos() {
 		return fallos;
 	}
@@ -114,53 +77,6 @@ public class juego {
 		this.fallos = fallos;
 	}
 
-	public int getControl() {
-		return control;
-	}
-
-	public void setControl(int control) {
-		this.control = control;
-	}
-
-	public char getCharUsu() {
-		return charUsu;
-	}
-
-	public void setCharUsu(char charUsu) {
-		this.charUsu = charUsu;
-	}
-
-	public int getPalabraAleatoria() {
-		return palabraAleatoria;
-	}
-
-	public void setPalabraAleatoria(int palabraAleatoria) {
-		this.palabraAleatoria = palabraAleatoria;
-	}
-
-	public String getPalabraEle() {
-		return palabraEle;
-	}
-
-	public void setPalabraEle(String palabraEle) {
-		this.palabraEle = palabraEle;
-	}
-
-	public int getTope() {
-		return tope;
-	}
-
-	public void setTope(int tope) {
-		this.tope = tope;
-	}
-
-	public int getContador() {
-		return contador;
-	}
-
-	public void setContador(int contador) {
-		this.contador = contador;
-	}
-
+	
 
 }
