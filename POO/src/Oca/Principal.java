@@ -1,6 +1,6 @@
 package Oca;
 
-
+import Ahorcado.juego;
 
 public class Principal {   
 

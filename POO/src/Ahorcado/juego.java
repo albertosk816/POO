@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 import javax.swing.JOptionPane;
 
-public class juego {
+public class juego{
 	
 	String palabras[] = new String []{"pantalon", "camiseta", "gorra"};
 
@@ -19,6 +19,7 @@ public class juego {
 	int contador =0; 
 	
 	//System.out.println(palabraEle);
+	
 
 	public void juegoAhorcado(){
    char[] coincidencias= new char [palabras[palabraAleatoria].length()];
