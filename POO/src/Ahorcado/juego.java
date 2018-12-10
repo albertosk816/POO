@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import javax.swing.JOptionPane;
 
+
 public class juego{
 	
 	String palabras[] = new String []{"pantalon", "camiseta", "gorra"};
@@ -19,6 +20,23 @@ public class juego{
 	int contador =0; 
 	
 	//System.out.println(palabraEle);
+	
+	
+	//Para poder iniciar el juego en la clase principal
+	public static void setJuego(juego juegoAhorcado) {
+		juego.juego = juegoAhorcado;
+	}
+	
+	private static juego juego = null;
+	
+
+	public static juego getJuego() {
+		if (juego == null) {
+			juego = new juego();
+		}
+		return juego;
+	}
+	
 	
 
 	public void juegoAhorcado(){
@@ -61,7 +79,7 @@ public class juego{
 		    		   }
 		    	   }	     
 		       }   	
-			
+			VentanaAhorcado.getVentana().repaint();
 		} while (contador!=tope && fallos<6);
 		if (fallos<6) {
 		  JOptionPane.showMessageDialog(null, "***Enhorabuena la palabra ha sido acertada***");
@@ -70,14 +88,17 @@ public class juego{
 		}
 }
 
+
+
 	public int getFallos() {
 		return fallos;
 	}
+
+
 
 	public void setFallos(int fallos) {
 		this.fallos = fallos;
 	}
 
-	
 
 }

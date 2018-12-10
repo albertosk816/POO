@@ -65,8 +65,8 @@ public class VentanaAhorcado extends Canvas {
 	
 	
 	public void paint (Graphics g) {
-		
-		//Muñeco
+		/*
+		//Muñeco 
 		g.setColor(Color.BLUE);
 		g.fillRect(300, 300, 60, 90);
 		
@@ -79,40 +79,68 @@ public class VentanaAhorcado extends Canvas {
 		
 		g.fillRect(300, 390, 20, 80);
 		g.fillRect(340, 390, 20, 80);
-		
-		if (juego.get.fallos>0) {
+		*/
+		if (juego.getJuego().getFallos()>0) {
 			g.setColor(Color.red);
 			g.fillRect(300, 300, 60, 90);
 		}
+		else {
+			g.setColor(Color.BLUE);
+			g.fillRect(300, 300, 60, 90);
+		}
 		
-		if (get.fallos >1) {
+		
+		
+		if (juego.getJuego().getFallos() >1) {
 			g.setColor(Color.red);
 			g.fillRect(220, 300, 80, 20);
 		}
+		else {
+			g.setColor(Color.BLUE);
+			g.fillRect(220, 300, 80, 20);
+		}
 		
-		if (fallos >2) {
+
+		if (juego.getJuego().getFallos() >2) {
 			g.setColor(Color.red);
 			g.fillRect(360, 300, 80, 20);
 		}
+		else {
+			g.setColor(Color.BLUE);
+			g.fillRect(360, 300, 80, 20);
+		}
 		
-		if (fallos >3) {
+
+		if (juego.getJuego().getFallos() >3) {
 			g.setColor(Color.red);
 			g.fillOval(285, 210, 90, 90);
 		}
+		else {
+			g.setColor(Color.BLUE);
+			g.fillOval(285, 210, 90, 90);
+		}
 		
-		if (fallos >4) {
+
+		if (juego.getJuego().getFallos() >4) {
 			g.setColor(Color.red);
 			g.fillRect(300, 390, 20, 80);
 		}
+		else {
+			g.setColor(Color.BLUE);
+			g.fillRect(300, 390, 20, 80);
+		}
 		
-		if (fallos >5) {
+
+		if (juego.getJuego().getFallos() >5) {
 			g.setColor(Color.red);
 			g.fillRect(340, 390, 20, 80);
 		}
+		else {
+			g.setColor(Color.BLUE);
+			g.fillRect(340, 390, 20, 80);
+		}
 		
-		
-		
-		
+
 		//horca
 		g.setColor(Color.darkGray);
 		g.fillRect(50, 600, 500, 10);
@@ -123,10 +151,7 @@ public class VentanaAhorcado extends Canvas {
 		
 		g.fillRect(330, 110, 5, 100);
 
-		
-		
-		
-	}
 	
+	}
 	
 }
