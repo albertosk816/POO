@@ -1,47 +1,60 @@
 package Formula1;
 
 
-public abstract class Vehiculo {
+public  class Vehiculo {
 	
-	//Vehiculo vehiculos[] = new Vehiculo [5];
-	
-
-	int metrosQueAvanzan;
 	
 
-
-	public int avanza(int metrosQueAvanza) {
 	
-	 metrosQueAvanza = (int) Math.round(Math.random()*47)+3;
+	int posicion = 0;
+	int turno = 1;
 
-	return metrosQueAvanza; 
+
+
+	public int avanza() {
+	
+	 int metrosQueAvanza = (int) Math.round(Math.random()*47)+3;
+
+	 return metrosQueAvanza;
     }
+	
+
 
 
 	@Override
 	public String toString() {
-		return "Vehiculo [metrosQueAvanzan=" + metrosQueAvanzan + ", getMetrosQueAvanzan()=" + getMetrosQueAvanzan()
-				+ "]";
+		return "Vehiculo [posicion=" + posicion + ", turno=" + turno + ", avanza()=" + avanza() + ", getPosicion()="
+				+ getPosicion() + ", getTurno()=" + getTurno() + "]";
 	}
 
 
 
-	public Vehiculo(int metrosQueAvanzan) {
-		super();
-		this.metrosQueAvanzan = metrosQueAvanzan;
+
+	public int getPosicion() {
+		return posicion;
 	}
 
 
 
-	public int getMetrosQueAvanzan() {
-		return metrosQueAvanzan;
+
+	public void setPosicion(int posicion) {
+		this.posicion = posicion;
 	}
 
 
 
-	public void setMetrosQueAvanzan(int metrosQueAvanzan) {
-		this.metrosQueAvanzan = metrosQueAvanzan;
+
+	public int getTurno() {
+		return turno;
 	}
+
+
+
+
+	public void setTurno(int turno) {
+		this.turno = turno;
+	}
+
 
 
 }

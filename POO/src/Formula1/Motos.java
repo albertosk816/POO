@@ -2,18 +2,31 @@ package Formula1;
 
 public  class Motos extends Vehiculo {
 	
-	
 
-	
-	public Motos(int metrosQueAvanzan) {
-		super(metrosQueAvanzan);
-		// TODO Auto-generated constructor stub
+	String nombre = "moto";
+
+
+
+@Override
+	public String toString() {
+		return "Motos [nombre=" + nombre + ", turno=" + turno + ", avanza()=" + avanza() + ", toString()="
+				+ super.toString() + ", getPosicion()=" + getPosicion() + "]";
 	}
 
-	public  void paint() {
-		
-	}
+
+public String getNombre() {
+	return nombre;
+}
+
+
+public void setNombre(String nombre) {
+	this.nombre = nombre;
+}
+
 	
+public void paint(){
+	
+}
 	
 }
 

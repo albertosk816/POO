@@ -1,6 +1,9 @@
 package Formula1;
 
-public class principal {
+import java.util.Iterator;
+
+
+public class Principal {
 	
 	/*
 	 *En este ejercicio vamos a simular la carrera de un conjunto de veh�culos. 
@@ -70,15 +73,49 @@ Los puntos a conseguir en el videojuego son los siguientes:
 	
 11.- Cuando el juego acabe se debe mostrar una pantalla completamente diferente, con el podium. 
 	 */
+	
+	public static  Vehiculo coche[] = new Coches[5];
+	public static  Vehiculo moto[] = new Motos[5];
+	
 
-	public static void main(String[] args) {
+
+	public static void main(String[] args) {	
 		
-		Vehiculo vehiculos[] = new Vehiculo [5];
+		inicializaVehiculos();
 		
-		for (int i = 0; i < vehiculos.length; i++) {
-		   
+		recorreVehiculos();
+		
+	}
+	
+	private static void inicializaVehiculos(){
+		moto[0] = new Motos();
+		moto[1] = new Motos();
+		moto[2] = new Motos();
+		moto[3] = new Motos();
+		moto[4] = new Motos();
+		
+		coche[0] = new Coches();
+		coche[1] = new Coches();
+		coche[2] = new Coches();
+		coche[3] = new Coches();
+		coche[4] = new Coches();
+		
+	}
+	
+	private static void recorreVehiculos(){
+		System.out.println("Motos: ");
+		
+		for (int i = 0; i < moto.length; i++) {
+			System.out.println(moto[i].turno + "-" + moto[i].posicion + "-" + moto[i].avanza());
 		}
-
+		
+		System.out.println("Coches: ");
+		
+		for (int i = 0; i < coche.length; i++) {
+			System.out.println(coche[i].turno + "-" + coche[i].posicion + "-" + coche[i].avanza());
+			
+		}
+		
 	}
 
 }
