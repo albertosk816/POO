@@ -3,7 +3,15 @@ package Formula1;
 public class Coches extends Vehiculo {
 
 
+
 	String nombre = "coche";
+	
+	
+	@Override
+	public String toString() {
+		return "Coches [nombre=" + nombre + ", posicion=" + posicion + ", turno=" + turno + ", avanza()=" + avanza()
+				+ "]";
+	}
 
 
 

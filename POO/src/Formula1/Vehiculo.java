@@ -3,13 +3,12 @@ package Formula1;
 
 public  class Vehiculo {
 	
-	
 
-	
 	int posicion = 0;
 	int turno = 1;
 
 
+	
 
 	public int avanza() {
 	

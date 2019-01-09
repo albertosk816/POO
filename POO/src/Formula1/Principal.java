@@ -74,8 +74,8 @@ Los puntos a conseguir en el videojuego son los siguientes:
 11.- Cuando el juego acabe se debe mostrar una pantalla completamente diferente, con el podium. 
 	 */
 	
-	public static  Vehiculo coche[] = new Coches[5];
-	public static  Vehiculo moto[] = new Motos[5];
+	public static  Vehiculo coche[] = new Coches[3];
+	public static  Vehiculo moto[] = new Motos[2];
 	
 
 
@@ -90,32 +90,73 @@ Los puntos a conseguir en el videojuego son los siguientes:
 	private static void inicializaVehiculos(){
 		moto[0] = new Motos();
 		moto[1] = new Motos();
-		moto[2] = new Motos();
-		moto[3] = new Motos();
-		moto[4] = new Motos();
+
 		
 		coche[0] = new Coches();
 		coche[1] = new Coches();
 		coche[2] = new Coches();
-		coche[3] = new Coches();
-		coche[4] = new Coches();
+
 		
 	}
 	
 	private static void recorreVehiculos(){
-		System.out.println("Motos: ");
+
+		int posicionActual = 0;
 		
-		for (int i = 0; i < moto.length; i++) {
-			System.out.println(moto[i].turno + "-" + moto[i].posicion + "-" + moto[i].avanza());
-		}
-		
-		System.out.println("Coches: ");
-		
-		for (int i = 0; i < coche.length; i++) {
-			System.out.println(coche[i].turno + "-" + coche[i].posicion + "-" + coche[i].avanza());
+		for (int j = 0; j < 500; j++) {
 			
-		}
+			while (moto[j].posicion < 500 && coche[j].posicion < 500 ) {
+				
+				System.out.println("Motos: ");
+				
+				
+				moto[j].posicion = moto[j].posicion + moto[j].avanza();
+				posicionActual = moto[j].posicion;
+				System.out.println(moto[j].turno + "-" + moto[j].posicion + "-" + moto[j].avanza() + " La posicion de la moto es: " + posicionActual);
+				
+				
+				
+				
+				
+				System.out.println("Coches: ");
+				
+			
+				coche[j].posicion = coche[j].posicion + coche[j].avanza();
+				posicionActual = coche[j].posicion;
+				System.out.println(coche[j].turno + "-" + coche[j].posicion + "-" + coche[j].avanza() + " La posicion de la moto es: " + posicionActual);
+				
+			}	
+			
+//			while (coche[j].posicion < 500) {
+//				
+//				System.out.println(coche[j].turno + "-" + coche[j].posicion + "-" + coche[j].avanza() + " La posicion de la moto es: " + posicionActual);
+//				coche[j].posicion = coche[j].posicion + coche[j].avanza();
+//				posicionActual = coche[j].posicion;
+//			}
 		
+		
+//		System.out.println("Motos: ");
+//		
+//		for (int i = 0; i < moto.length; i++) {
+//			
+//			System.out.println(moto[i].turno + "-" + moto[i].posicion + "-" + moto[i].avanza() + " La posicion de la moto es: " + posicionActual);
+//			moto[i].posicion = moto[i].posicion + moto[i].avanza();
+//			posicionActual = moto[i].posicion;
+//			
+//		}
+//		
+//		System.out.println("Coches: ");
+//		
+//		for (int i = 0; i < coche.length; i++) {
+//			
+//			System.out.println(coche[i].turno + "-" + coche[i].posicion + "-" + coche[i].avanza() + " La posicion del coche es: " + posicionActual);
+//			coche[i].posicion = coche[i].posicion + coche[i].avanza();
+//			posicionActual = coche[i].posicion;
+//			
+//		}
+		
+		
+		}
 	}
 
 }
