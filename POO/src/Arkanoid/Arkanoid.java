@@ -3,43 +3,33 @@ package Arkanoid;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Toolkit;
+import java.awt.Graphics2D;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
-import java.net.URL;
-import java.util.HashMap;
+import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-
-public class Arkanoid extends Canvas {
-	public static final int WIDTH = 640;
-	public static final int HEIGHT = 480;
-	public static final int SPEED = 10;
+public class Arkanoid extends Canvas implements Stage {
 	
-	public BufferStrategy strategy;
-	public HashMap sprites;
-	public int posX,posY,vX;
-	public long usedTime;
+	private BufferStrategy strategy;
+	private long usedTime;
+	
+	private SpriteCache spriteCache;
+	private ArrayList actors; 
 	
 	public Arkanoid() {
-		sprites = new HashMap();
-		posX = WIDTH/2;
-		posY = HEIGHT/2;
-		vX = 2;
-	
-		JFrame ventana = new JFrame("Invaders");
+		spriteCache = new SpriteCache();
+
+		JFrame ventana = new JFrame("Arkanoid");
 		JPanel panel = (JPanel)ventana.getContentPane();
-		setBounds(0,0,WIDTH,HEIGHT);
-		panel.setPreferredSize(new Dimension(WIDTH,HEIGHT));
+		setBounds(0,0,Stage.WIDTH,Stage.HEIGHT);
+		panel.setPreferredSize(new Dimension(Stage.WIDTH,Stage.HEIGHT));
 		panel.setLayout(null);
 		panel.add(this);
-		ventana.setBounds(0,0,WIDTH,HEIGHT);
+		ventana.setBounds(0,0,Stage.WIDTH,Stage.HEIGHT);
 		ventana.setVisible(true);
 		ventana.addWindowListener( new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
@@ -49,55 +39,51 @@ public class Arkanoid extends Canvas {
 		ventana.setResizable(false);
 		createBufferStrategy(2);
 		strategy = getBufferStrategy();
-		Toolkit.getDefaultToolkit().sync();
 		requestFocus();
 	}
 	
-	public BufferedImage loadImage(String nombre) {
-		URL url=null;
-		try {
-			url = getClass().getResource(nombre);
-			return ImageIO.read(url);
-		} catch (Exception e) {
-			System.out.println("No se pudo cargar la imagen " + nombre +" de "+url);
-			System.out.println("El error fue : "+e.getClass().getName()+" "+e.getMessage());
-			System.exit(0);
-			return null;
-		}
+	public void initWorld() {
+    actors = new ArrayList();
+    for (int i = 0; i < 1; i++){
+      Pelota m = new Pelota(this);
+        m.setX( (int)(Math.random()*Stage.WIDTH) );
+	    m.setY( i*20 );
+	    m.setVx( (int)(Math.random()*20-10) );//	    m.setVx( (int)(Math.random()*20-10) );
+      actors.add(m);
+    }
 	}
 	
-	public BufferedImage getSprite(String nombre) {
-		BufferedImage img = (BufferedImage)sprites.get(nombre);
-		if (img == null) {
-			img = loadImage("../res/"+nombre);
-			sprites.put(nombre,img);
+	public void updateWorld() {
+		for (int i = 0; i < actors.size(); i++) {
+			Actor m = (Actor)actors.get(i);
+			m.act();
 		}
-		return img;
 	}
 	
 	public void paintWorld() {
-		Graphics g = strategy.getDrawGraphics();
+		Graphics2D g = (Graphics2D)strategy.getDrawGraphics();
 		g.setColor(Color.black);
 		g.fillRect(0,0,getWidth(),getHeight());
-		g.drawImage(getSprite("pelota.jpg"), posX, posY,this);
+		for (int i = 0; i < actors.size(); i++) {
+			Actor m = (Actor)actors.get(i);
+			m.paint(g);
+		}
 
 		g.setColor(Color.white);
 		if (usedTime > 0)
-			g.drawString(String.valueOf(1000/usedTime)+" fps",0,HEIGHT-50);
-		else
-			g.drawString("--- fps",0,HEIGHT-50);
+		  g.drawString(String.valueOf(1000/usedTime)+" fps",0,Stage.HEIGHT-50);
+  	else
+	  	g.drawString("--- fps",0,Stage.HEIGHT-50);
 		strategy.show();
 	}
 	
-
-	
-	public void updateWorld() {
-		posX += vX;
-		if (posX < 0 || posX > WIDTH) vX = -vX;
+	public SpriteCache getSpriteCache() {
+		return spriteCache;
 	}
 	
 	public void game() {
 		usedTime=1000;
+		initWorld();
 		while (isVisible()) {
 			long startTime = System.currentTimeMillis();
 			updateWorld();
@@ -113,5 +99,4 @@ public class Arkanoid extends Canvas {
 		Arkanoid ark = new Arkanoid();
 		ark.game();
 	}
-
 }
