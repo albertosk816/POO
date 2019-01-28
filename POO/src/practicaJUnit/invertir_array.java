@@ -25,7 +25,7 @@ public class invertir_array {
 		for (int i = 0; i <= longitud/2; i++) {
 			//vamos guardando la posicion que vamos a intencambiar desde el final
 			
-			aux = array[longitud-i];
+			aux = array[(longitud-1)-i];
 			
 			/*como ya tenemos guardada la poscion longitud -i-1, ya podemos guardar
 			 * en esa poscion un valor
