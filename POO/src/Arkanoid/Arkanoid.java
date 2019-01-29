@@ -4,15 +4,24 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
+import java.awt.MouseInfo;
+import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionAdapter;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferStrategy;
 import java.util.ArrayList;
+import java.util.EventObject;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class Arkanoid extends Canvas implements Stage {
+
+
+public class Arkanoid extends Canvas implements Stage, MouseListener{
 	
 	private BufferStrategy strategy;
 	private long usedTime;
@@ -35,7 +44,17 @@ public class Arkanoid extends Canvas implements Stage {
 			public void windowClosing(WindowEvent e) {
 				System.exit(0);
 			}
+		
 		});
+
+		 addMouseMotionListener(new MouseMotionAdapter(){
+		 @Override
+	     public void mouseMoved(MouseEvent evento){
+			   evento.getX();
+			   evento.getY();
+			 }
+		});
+			  
 		ventana.setResizable(false);
 		createBufferStrategy(2);
 		strategy = getBufferStrategy();
@@ -44,15 +63,53 @@ public class Arkanoid extends Canvas implements Stage {
 	
 	public void initWorld() {
     actors = new ArrayList();
+
+ 
+
     for (int i = 0; i < 1; i++){
+
       Pelota m = new Pelota(this);
-        m.setX( (int)(Math.random()*Stage.WIDTH) );
-	    m.setY( i*20 );
-	    m.setVx( (int)(Math.random()*20-10) );//	    m.setVx( (int)(Math.random()*20-10) );
+
+      m.setY(20);
+
+	    m.setVx(3);//	    m.setVx( (int)(Math.random()*20-10) );
+
       actors.add(m);
     }
+     
+    
+    for (int i = 0; i < 1; i++) {
+
+    	   	
+		Base b = new Base(this);
+		b.setX(MouseInfo.getPointerInfo().getLocation().x);
+		b.setY(550);
+
+		
+
+	    actors.add(b);
 	}
-	
+    
+    int aumento = 50;
+    int bloque = 0;
+    for (int i = 0; i < 5; i++) {
+
+		Bloques bl = new Bloques(this);
+
+    	bl.setX(bloque);
+//		bloque+=51;
+    	
+		bl.setY(aumento);
+		aumento+=50;
+
+		
+
+	    actors.add(bl);
+	}
+
+    
+	}
+
 	public void updateWorld() {
 		for (int i = 0; i < actors.size(); i++) {
 			Actor m = (Actor)actors.get(i);
@@ -62,6 +119,9 @@ public class Arkanoid extends Canvas implements Stage {
 	
 	public void paintWorld() {
 		Graphics2D g = (Graphics2D)strategy.getDrawGraphics();
+		//Aqui tendre que poner el fondo pra el juego
+		
+		
 		g.setColor(Color.black);
 		g.fillRect(0,0,getWidth(),getHeight());
 		for (int i = 0; i < actors.size(); i++) {
@@ -98,5 +158,35 @@ public class Arkanoid extends Canvas implements Stage {
 	public static void main(String[] args) {
 		Arkanoid ark = new Arkanoid();
 		ark.game();
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }

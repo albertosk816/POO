@@ -1,13 +1,18 @@
 package Arkanoid;
+import java.awt.Cursor;
 import java.awt.Graphics2D;
+import java.awt.Point;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 
 public class Actor {
-	protected int x,y;
+	protected int x;
+	protected int y;
 	protected int width, height;
 	protected String spriteName;
 	protected Stage stage;
 	protected SpriteCache spriteCache;
+
 	
 	public Actor(Stage stage) {
 		this.stage = stage;
@@ -17,6 +22,7 @@ public class Actor {
 	public void paint(Graphics2D g){
 		g.drawImage( spriteCache.getSprite(spriteName), x,y, stage );
 	}
+
 	
 	public int getX()  { return x; }
 	public void setX(int i) {	x = i; }
