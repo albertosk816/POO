@@ -1,5 +1,7 @@
 package Arkanoid;
 
+import java.awt.event.MouseEvent;
+
 public class Base extends Actor {
 	protected int vx;
 	protected int vy;
@@ -18,5 +20,11 @@ public class Base extends Actor {
 
 	public int getVx() { return vx; }
 	public void setVx(int i) {vx = i;	}
+	
+	
+	
+	public void mouseMoved(MouseEvent e) {
+		setX(e.getX());
+	}
 	
 }

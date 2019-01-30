@@ -10,6 +10,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionAdapter;
+import java.awt.event.MouseMotionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferStrategy;
@@ -21,7 +22,7 @@ import javax.swing.JPanel;
 
 
 
-public class Arkanoid extends Canvas implements Stage, MouseListener{
+public class Arkanoid extends Canvas implements Stage, MouseMotionListener{
 	
 	private BufferStrategy strategy;
 	private long usedTime;
@@ -73,6 +74,8 @@ public class Arkanoid extends Canvas implements Stage, MouseListener{
       m.setY(20);
 
 	    m.setVx(3);//	    m.setVx( (int)(Math.random()*20-10) );
+	    
+	    m.setVy(3);
 
       actors.add(m);
     }
@@ -82,7 +85,8 @@ public class Arkanoid extends Canvas implements Stage, MouseListener{
 
     	   	
 		Base b = new Base(this);
-		b.setX(MouseInfo.getPointerInfo().getLocation().x);
+		b.setX(5);
+		b.getX();
 		b.setY(550);
 
 		
@@ -161,32 +165,16 @@ public class Arkanoid extends Canvas implements Stage, MouseListener{
 	}
 
 	@Override
-	public void mouseClicked(MouseEvent e) {
+	public void mouseDragged(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
+	public void mouseMoved(MouseEvent e) {
+		
 		
 	}
 
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
 
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
 }
