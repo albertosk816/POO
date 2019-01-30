@@ -47,8 +47,6 @@ public class menormayor_primo {
 			return ultimosPrimos;
 		}
 		
-		
-		
 		/**
 		 * 
 		 * @param num
@@ -65,7 +63,7 @@ public class menormayor_primo {
 		
 		
 		
-		private static int[] devuelveMenorMayor(int numero1, int numero2, int numero3) {
+		public static int[] devuelveMenorMayor(int numero1, int numero2, int numero3) {
 
 			int array[] = new int[] {numero1 , numero2, numero3};
 			
