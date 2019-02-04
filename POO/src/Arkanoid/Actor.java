@@ -2,6 +2,7 @@ package Arkanoid;
 import java.awt.Cursor;
 import java.awt.Graphics2D;
 import java.awt.Point;
+import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 
@@ -14,11 +15,12 @@ public class Actor {
 	protected SpriteCache spriteCache;
 
 	
-	public Actor(Stage stage) {
+	public Actor() {
 		this.stage = stage;
 		spriteCache = stage.getSpriteCache();
 	}
-	
+
+
 	public void paint(Graphics2D g){
 		g.drawImage( spriteCache.getSprite(spriteName), x,y, stage );
 	}
@@ -44,4 +46,9 @@ public class Actor {
 	public void setWidth(int i) {	width = i;	}
 
 	public void act() { }
+
+	public void mouseMoved(MouseEvent event) {
+		 
+		
+	}
 }

@@ -4,11 +4,12 @@ public class Pelota extends Actor {
 	protected int vy;
 
 	
-	public Pelota(Stage stage) {
-		super(stage);
+	public Pelota() {
+		super();
 		setSpriteName("pelota1.png");
 	}
-	
+
+
 	public void act() {
 		x+=vx;
 		if (x < 0 || x > Stage.WIDTH-38)
