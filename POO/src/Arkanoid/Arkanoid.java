@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.Toolkit;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferStrategy;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,24 +15,26 @@ import javax.swing.JPanel;
 
 
 
-public class Arkanoid extends Canvas implements Stage{
+public class Arkanoid extends Canvas{
 
 
 	public static final int ANCHO = 400;
 	public static final int ALTO = 600;
 	public static final int FPS = 100; // Frames por segundo
-	// Ventana
+	
 	JFrame ventana = null;
-	// Lista de actores que se representan en pantalla
+
 	List<Actor> actores = new ArrayList<Actor>();
-	// Base y pelota
+
 	Base b = new Base();
 	Pelota p = new Pelota();
-	// Fase activa en el juego
+
 	Fase faseActiva = null;
-	// Estrategia de Doble Buffer
+
 	private BufferStrategy strategy;
-	// Variable para patr�n Singleton
+	
+	
+
 	private static Arkanoid instancia = null;
 	
 		public static Arkanoid getInstancia () {
@@ -55,20 +58,18 @@ public class Arkanoid extends Canvas implements Stage{
 	
 	public Arkanoid() {
 		
-		// Creaci�n de la ventana
+
 		ventana = new JFrame("Arkanoid");
-		// Obtenemos el panel principal del JFrame
+
 		JPanel panel = (JPanel) ventana.getContentPane();
-		// Establezco las dimensiones del Canvas
+
 		this.setBounds(0,0,ANCHO,ALTO);
-		// El panel tendr� un tama�o preferido
+
 		panel.setPreferredSize(new Dimension(ANCHO,ALTO));
 		panel.setLayout(null);
-		// Agregamos el Canvas al panel
 		panel.add(this);
-		// Dimensionamos el JFrame
+
 		ventana.setBounds( 0, 0, ANCHO+5, ALTO+28);
-		// Hacemos el JFrame visible
 		ventana.setVisible(true);
 
 		// Creaci�n de la estrategia de doble b�ffer
@@ -201,7 +202,10 @@ public class Arkanoid extends Canvas implements Stage{
 		// Una vez construida la escena nueva, la mostramos.
 		strategy.show();
 	}
-	
+	public void mouseMoved(MouseEvent event) {
+		 
+		
+	}
 		
 		
 //		Graphics2D g = (Graphics2D)strategy.getDrawGraphics();
@@ -257,12 +261,6 @@ public class Arkanoid extends Canvas implements Stage{
 		ark.game();
 	}
 
-	@Override
-	public SpriteCache getSpriteCache() {
-
-		
-		return null;
-	}
 
 
 }

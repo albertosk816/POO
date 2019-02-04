@@ -1,4 +1,5 @@
 package Arkanoid;
+import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Graphics2D;
 import java.awt.Point;
@@ -16,8 +17,9 @@ public class Actor {
 
 	
 	public Actor() {
-		this.stage = stage;
-		spriteCache = stage.getSpriteCache();
+			// En principio coloco una imagen gen�rica al actor
+		spriteActual =spriteCache.getSprite("pelota.png");
+		
 	}
 
 
@@ -47,8 +49,10 @@ public class Actor {
 
 	public void act() { }
 
+
 	public void mouseMoved(MouseEvent event) {
-		 
+		// TODO Auto-generated method stub
 		
 	}
+
 }
