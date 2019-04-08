@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 class menormayor_primoTestAll {
 
 	@Test
-	void testGetTresUltimosPrimos() {
+	public void testGetTresUltimosPrimos() {
 		
 		menormayor_primo p = new menormayor_primo();
 		int ultimos[] = p.getTresUltimosPrimos(50);
@@ -16,12 +16,12 @@ class menormayor_primoTestAll {
 	}
 
 	@Test
-	void testDevuelveMenorMayor() {
+	public void testDevuelveMenorMayor() {
 	
 		menormayor_primo a = new menormayor_primo();
 
 		
-		int[] prueba = a.devuelveMenorMayor(352, 443, 317);
+		int[] prueba = a.devuelveMenorMayor(new int[] {352, 443, 317});
 		int[] esperado= { 317, 352 , 443};
 		assertArrayEquals(prueba, esperado);
 	}

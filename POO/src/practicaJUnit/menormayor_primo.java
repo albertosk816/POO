@@ -16,7 +16,7 @@ public class menormayor_primo {
 			
 			System.out.println();
 			
-			int numeros[]= devuelveMenorMayor(123, 243, 37);
+			int numeros[]= devuelveMenorMayor(new int[] { 37,123, 243});
 			
 			System.out.println("mayor: " + numeros[2] + "\nmenor: " + numeros[0]);
 			
@@ -64,18 +64,12 @@ public class menormayor_primo {
 		
 		
 		
-		public static int[] devuelveMenorMayor(int numero1, int numero2, int numero3) {
+		public static int[] devuelveMenorMayor(int array[]) {
 
-			int array[] = new int[] {numero1 , numero2, numero3};
-			
+					
 			Arrays.sort(array);
 			
-//			for (int i = array.length-1; i > 0; i--) {
-//				for (int j = 0; j < i; j++) {
-//					if (array[j] > array[j+1]) {
-//						int aux = array[j];
-//						array[j] = array[j+1];
-//						array [j+1] = aux;
+//			
 //					}
 //				}
 //			}

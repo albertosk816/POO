@@ -6,25 +6,25 @@ import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
+import java.awt.image.ImageObserver;
 
 public class Actor {
 	protected int x;
 	protected int y;
 	protected int width, height;
 	protected String spriteName;
-	protected Stage stage;
 	protected SpriteCache spriteCache;
 
-	
-	public Actor() {
-			// En principio coloco una imagen gen�rica al actor
-		spriteActual =spriteCache.getSprite("pelota.png");
-		
+
+
+	public Actor(Stage stage) {
+
 	}
 
 
 	public void paint(Graphics2D g){
-		g.drawImage( spriteCache.getSprite(spriteName), x,y, stage );
+		ImageObserver stage = null;
+		g.drawImage( spriteCache.getSprite(spriteName), x,y, stage);
 	}
 
 	

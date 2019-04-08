@@ -1,52 +1,46 @@
 package practicaJUnit;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertArrayEquals;
+
 
 import java.util.Arrays;
 import java.util.Collection;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 	@RunWith (Parameterized.class)
 public class menormayor_primoTestParametrizada {
-		private int numeros[] = new int[3];
-		private int numeros2[] = new int[3];
-		
-		
-		public menormayor_primoTestParametrizada(int numeros[]) {
-			
-			this.numeros = numeros;
-			this.numeros2=numeros2;
-		}
-		
+		private int[] numeros;
+		private int[] resultado;
 
+
+		public menormayor_primoTestParametrizada( int numeros[], int resultado[]) {
+			
+			this.numeros=numeros;
+			this.resultado=resultado;
+
+		}
 
 		@Parameters
 		public static Collection<Object[]> numeros(){
 		return Arrays.asList(new Object[][] {
-			
-
-			menormayor_primo a = new menormayor_primo{24 ,15 , 49},
-			
-			
-			menormayor_primo b = new menormayor_primo{46, 21, 78}
-			
+			{new int[] {43, 15, 49},new int[] {15, 43 , 49}
+			},
+			{
+				new int[] {43, 15, 49},new int[] {15, 48 , 49}
+			}
 		});
 	}
+	
 
 	@Test
-	void testGetTresUltimosPrimos() {
-		menormayor_primo a = new menormayor_primo();
-		int[] esperado= { 37,123, 243};
-		assertArrayEquals(a, esperado);
+	public void testGetTresUltimosPrimos() {
 
-
-//		assertArrayEquals(prueba, esperado);
-		
-	}
+		menormayor_primo c = new menormayor_primo();
+		assertArrayEquals(numeros, c.devuelveMenorMayor(resultado));
 
 	}
+}

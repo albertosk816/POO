@@ -1,12 +1,14 @@
 package Arkanoid;
+
+
 public class Pelota extends Actor {
 	protected int vx;
 	protected int vy;
 
 	
-	public Pelota() {
-		super();
-		setSpriteName("pelota1.png");
+	public Pelota(Stage stage) {
+		super(stage);
+//		spriteCache.getSprite(setSpriteName("pelota1.png"));
 	}
 
 
@@ -20,16 +22,18 @@ public class Pelota extends Actor {
 		  vy = -vy;
 	}
 	
-
-
-		
-	
-
+//	public void paint(Graphics2D g){
+//		setSpriteName("pelota1.png");
+//		
+//	}
 
 	public int getVx() { return vx; }
 	public void setVx(int i) {vx = i;	}
 	
 	public int getVy() { return vy; }
 	public void setVy(int i) {vy = i;	}
+	
+	
+
 
 }

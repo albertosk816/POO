@@ -12,7 +12,7 @@ class menormayor_primoTest {
 		menormayor_primo a = new menormayor_primo();
 
 		
-		int[] prueba = a.devuelveMenorMayor(123, 243, 37);
+		int[] prueba = a.devuelveMenorMayor(new int[] {123, 243, 37});
 		int[] esperado= { 37,123, 243};
 		assertArrayEquals(prueba, esperado);
 	}
